@@ -222,12 +222,12 @@ namespace SonarScanner.Shim
                 return new { ProjectInfo = p, Workdir = moduleWorkdir };
             }).ToList().ForEach(t => AppendKeyValue(sb, t.ProjectInfo.GetProjectGuidAsString(), SonarProperties.WorkingDirectory, t.Workdir));
 
-            if (sharedFiles.Count > 0)
-            {
-                sb.AppendLine(@"sonar.sources=\");
-                var escapedFiles = sharedFiles.Select(Escape);
-                sb.AppendLine(string.Join(@",\" + Environment.NewLine, escapedFiles));
-            }
+            //if (sharedFiles.Count > 0)
+            //{
+            //    sb.AppendLine(@"sonar.sources=\");
+            //    var escapedFiles = sharedFiles.Select(Escape);
+            //    sb.AppendLine(string.Join(@",\" + Environment.NewLine, escapedFiles));
+            //}
 
             sb.AppendLine();
 
